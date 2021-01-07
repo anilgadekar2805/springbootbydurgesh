@@ -44,7 +44,6 @@ public class BookService {
 	// update records
 	public Book updateBook(Book book, int id) {
 			Book findBook = findBookById(id);
-				findBook.setId(book.getId());
 				findBook.setName(book.getName());
 				findBook.setAuthor(book.getAuthor());
 				findBook.setPrice(book.getPrice());
