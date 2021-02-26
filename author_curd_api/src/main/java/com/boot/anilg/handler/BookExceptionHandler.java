@@ -15,11 +15,11 @@ import com.boot.anilg.exception.ErrorDetails;
 public class BookExceptionHandler {
 	
 	@ExceptionHandler(BookNotFoundException.class)
- 	public ResponseEntity<?> handleBookNotFoundException(BookNotFoundException exception, WebRequest request){
+	public ResponseEntity<?> handleBookNotFoundException(BookNotFoundException exception, WebRequest request){
 		ErrorDetails details  = new ErrorDetails(exception.getMessage(), new Date(), request.getContextPath());
 		return new ResponseEntity<>(details, HttpStatus.NOT_FOUND);
 	}
-	 
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleGlobalException(Exception exception, WebRequest request){
 		ErrorDetails details  = new ErrorDetails(exception.getMessage(), new Date(), request.getContextPath());
